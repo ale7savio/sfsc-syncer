@@ -28,7 +28,7 @@ const PORT = process.env.PORT || 3000;
 var helmet = require( "helmet" );
 app.use( helmet() );
 
-var token = process.env.TOKEN || "local-dev";
+var token = "KUypCxw+uNWkWNeeAL=@Yp5-QGMc&mSkxs9%t?gjBErytrms_wtEPMN^S8MKg!QwyD@W!=g9UUrq*p+fY*-eeEB@95TZ!rG%jp+C3F_^C%rnS88qPTu+QjBgCqPCCRtXS+DHQQ-5ecdts&pXjP-Hz+g=JJSxq$2RFe*HG#ku69V-HjQM?xy-QWw&byP%%$gvm?*?g-qBT^PLHVdxt*y+KNkH%PAgcM-EH8k9@J&5LPZdPHj$a6me+YZJ^J_wX#f";
 
 // -------------------------------------------------------------------------------------------------------------------------
 // --------------- CONNECTION TO DATABASE ----------------------------------------------------------------------------------
@@ -65,6 +65,7 @@ app.get(
         function( req, res ) {
 
                 logRequest( req );
+                res.send( token );
 
                 // Authentication check
                 if( req.query.auth != "true" || checkAuth( req ,res ) ) {
