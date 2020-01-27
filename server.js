@@ -46,10 +46,6 @@ pg.defaults.ssl = true;
 var dbURL = "postgres://ub3sn6j7hnsapl:p6ac34ea3e5868be0f78e8b2341053f1b672694973ddfc4eaaed7966b56a82df4@ec2-34-246-254-183.eu-west-1.compute.amazonaws.com:5432/d9atqk42arg1jd?ssl=true&sslfactory=org.postgresql.ssl.NonValidatingFactory";
 var syncPeriod = "0";
 
-httpServer.listen( PORT, function(){
-        console.log(`Listening on ${ PORT }`);
-});
-
 
 // -------------------------------------------------------------------------------------------------------------------------
 // --------------- API ENDPOINTS -------------------------------------------------------------------------------------------
@@ -65,7 +61,6 @@ app.get(
         function( req, res ) {
 
                 logRequest( req );
-                res.send( process.env.TOKEN );
 
                 // Authentication check
                 if( req.query.auth != "true" || checkAuth( req ,res ) ) {
@@ -939,7 +934,7 @@ function logRequest( req ) {
          +      " -- URL PARAMS\n\n"
          + JSON.stringify( req.query ) + "\n\n"
          +      " ---- PROCESSING START\n"
-        );
+       );
 }
 
 function logResult( statusCode, statusMessage ) {
