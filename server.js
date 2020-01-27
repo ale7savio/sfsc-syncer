@@ -28,7 +28,7 @@ const PORT = 3000;
 var helmet = require( "helmet" );
 app.use( helmet() );
 
-var token = "prueba";
+var token = "KUypCxw+uNWkWNeeAL=@Yp5-QGMc&mSkxs9%t?gjBErytrms_wtEPMN^S8MKg!QwyD@W!=g9UUrq*p+fY*-eeEB@95TZ!rG%jp+C3F_^C%rnS88qPTu+QjBgCqPCCRtXS+DHQQ-5ecdts&pXjP-Hz+g=JJSxq$2RFe*HG#ku69V-HjQM?xy-QWw&byP%%$gvm?*?g-qBT^PLHVdxt*y+KNkH%PAgcM-EH8k9@J&5LPZdPHj$a6me+YZJ^J_wX#f";
 
 // -------------------------------------------------------------------------------------------------------------------------
 // --------------- CONNECTION TO DATABASE ----------------------------------------------------------------------------------
@@ -64,7 +64,7 @@ app.get(
         ROOT_PATH + "/echo",
         function( req, res ) {
 
-                res.send( "asdsa" );
+                res.send( "esto es una prueba" );
 
         }
 );
