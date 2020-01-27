@@ -61,14 +61,14 @@ httpServer.listen( PORT, function(){
 
 /* Echo endpoint for testing purposes */
 app.get(
-        ROOT_PATH + "/echo/:wave",
+        ROOT_PATH + "/echo",
         function( req, res ) {
 
                 logRequest( req );
 
                 // Authentication check
                 if( req.query.auth != "true" || checkAuth( req ,res ) ) {
-                        res.send( req.params.wave );
+                        res.send( req.query );
                 }
         }
 );
