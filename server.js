@@ -22,13 +22,13 @@ var multer = require( "multer" );
 var upload = multer();
 
 const ROOT_PATH = "/data-api";
-const PORT = process.env.PORT || 3000;
+const PORT = 3000;
 
 // Security
 var helmet = require( "helmet" );
 app.use( helmet() );
 
-var token = "KUypCxw+uNWkWNeeAL=@Yp5-QGMc&mSkxs9%t?gjBErytrms_wtEPMN^S8MKg!QwyD@W!=g9UUrq*p+fY*-eeEB@95TZ!rG%jp+C3F_^C%rnS88qPTu+QjBgCqPCCRtXS+DHQQ-5ecdts&pXjP-Hz+g=JJSxq$2RFe*HG#ku69V-HjQM?xy-QWw&byP%%$gvm?*?g-qBT^PLHVdxt*y+KNkH%PAgcM-EH8k9@J&5LPZdPHj$a6me+YZJ^J_wX#f";
+var token = "prueba";
 
 // -------------------------------------------------------------------------------------------------------------------------
 // --------------- CONNECTION TO DATABASE ----------------------------------------------------------------------------------
@@ -46,6 +46,10 @@ pg.defaults.ssl = true;
 var dbURL = "postgres://ub3sn6j7hnsapl:p6ac34ea3e5868be0f78e8b2341053f1b672694973ddfc4eaaed7966b56a82df4@ec2-34-246-254-183.eu-west-1.compute.amazonaws.com:5432/d9atqk42arg1jd?ssl=true&sslfactory=org.postgresql.ssl.NonValidatingFactory";
 var syncPeriod = "0";
 
+httpServer.listen( PORT, function(){
+        console.log(`Listening on ${ PORT }`);
+});
+
 
 // -------------------------------------------------------------------------------------------------------------------------
 // --------------- API ENDPOINTS -------------------------------------------------------------------------------------------
@@ -60,12 +64,8 @@ app.get(
         ROOT_PATH + "/echo",
         function( req, res ) {
 
-                logRequest( req );
+                res.send( "asdsa" );
 
-                // Authentication check
-                if( req.query.auth != "true" || checkAuth( req ,res ) ) {
-                        res.send( req.query );
-                }
         }
 );
 
