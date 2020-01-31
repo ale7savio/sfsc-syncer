@@ -44,7 +44,7 @@ var SALESFORCE_SCHEMA_SANDBOX = "sf_mirror_sandbox";
 var pg = require( "pg" );
 pg.defaults.ssl = true;
 // var dbURL = "postgres://ub3sn6j7hnsapl:p6ac34ea3e5868be0f78e8b2341053f1b672694973ddfc4eaaed7966b56a82df4@ec2-34-246-254-183.eu-west-1.compute.amazonaws.com:5432/d9atqk42arg1jd?ssl=true&sslfactory=org.postgresql.ssl.NonValidatingFactory";
-var dbURL = "postgres://sfsc_dbuser:rPdPKR8xeMXR8rfq@35.198.176.23:5432/sfsc_db";
+var dbURL = "postgres://sfsc_dbuser:NNbK8LjlB4c09btN@35.198.189.51:5432/sfsc_db";
 var syncPeriod = "0";
 
 httpServer.listen( PORT, function(){
